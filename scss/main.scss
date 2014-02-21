@@ -1,0 +1,45 @@
+@import "bourbon";
+@import "neat";
+@import "bitters";
+@import "partials/colors";
+@import "partials/mixins";
+$mobile: new-breakpoint(max-width 500px 6);
+body{
+	margin: 0;
+}
+*{
+	box-sizing: border-box;
+}
+.hero{
+	width: 100%;
+	background: $teal;
+	height: 300px;
+	position: relative;
+	border: 1em solid lighten($teal,20);
+}
+.main-container{
+	 @include outer-container;
+}
+.main-story {
+  @include span-columns(6);
+  padding: 1em;
+  	@include media($mobile) {
+	  width: 100%;
+	}
+
+}
+.sidebar {
+  @include span-columns(6);
+  	@include media($mobile) {
+	   width: 100%;
+	}
+}
+h1{
+	font-size: golden-ratio(18px,  2);
+}
+h2{
+	font-size: golden-ratio(18px,  1);
+}
+p, li{
+	font-size: golden-ratio(18px,  0);
+}

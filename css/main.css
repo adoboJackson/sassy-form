@@ -1,8 +1,12 @@
+/* mixins */
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+/* grid system */
 
 button,
 input[type="submit"] {
@@ -403,6 +407,63 @@ dl dd {
   color: black;
 }
 
+/* styling */
+
+/* project specific color palette */
+
+/* --- http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/ --*/
+
+/* center a block level element */
+
+/* background image replacement for retina screens */
+
+/* ====== media  object (http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)====== */
+
+.media {
+  *zoom: 1;
+  margin: 10px;
+}
+
+.media:before,
+.media:after {
+  content: " ";
+  display: table;
+}
+
+.media:after {
+  clear: both;
+}
+
+.media .bd {
+  *zoom: 1;
+}
+
+.media .bd:before,
+.media .bd:after {
+  content: " ";
+  display: table;
+}
+
+.media .bd:after {
+  clear: both;
+}
+
+.media .img {
+  float: left;
+  margin-right: 10px;
+}
+
+.media .img img {
+  display: block;
+}
+
+.media .imgExt {
+  float: right;
+  margin-left: 10px;
+}
+
+/* project specific mixins */
+
 body {
   margin: 0;
 }
@@ -415,10 +476,11 @@ body {
 
 .hero {
   width: 100%;
-  background: #39cccc;
   height: 300px;
   position: relative;
   border: 1em solid #8ae1e1;
+  /*background: $teal url(http://placekitten.com/1280/300) 0 0 no-repeat;*/
+  background-position: center;
 }
 
 .main-container {
@@ -474,14 +536,40 @@ body {
 }
 
 h1 {
-  font-size: 47.12263px;
+  font-size: 62.83018px;
 }
 
 h2 {
-  font-size: 29.124px;
+  font-size: 38.832px;
 }
 
 p,
 li {
-  font-size: 18px;
+  font-size: 24px;
+  line-height: 1.5em;
+}
+
+input[type="submit"] {
+  display: block;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+}
+
+.media {
+  border: 2px solid #217e7e;
+  background-color: #dbf6f6;
+  color: #333;
+  padding: 1em;
+  margin: 1em;
+  /* extends generic media-object */
+}
+
+.media h3 {
+  color: #217e7e;
+}
+
+.media .img {
+  border: 2px solid white;
 }

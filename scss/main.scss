@@ -1,8 +1,9 @@
-@import "bourbon";
-@import "neat";
-@import "bitters";
-@import "partials/colors";
-@import "partials/mixins";
+@import "bourbon";/* mixins */
+@import "neat";/* grid system */
+@import "bitters";/* styling */
+@import "partials/colors";/* project specific color palette */
+@import "partials/mixins";/* project specific mixins */
+
 $mobile: new-breakpoint(max-width 500px 6);
 body{
 	margin: 0;
@@ -12,10 +13,11 @@ body{
 }
 .hero{
 	width: 100%;
-	background: $teal;
 	height: 300px;
 	position: relative;
 	border: 1em solid lighten($teal,20);
+	/*background: $teal url(http://placekitten.com/1280/300) 0 0 no-repeat;*/
+	background-position:center; 
 }
 .main-container{
 	 @include outer-container;
@@ -35,11 +37,21 @@ body{
 	}
 }
 h1{
-	font-size: golden-ratio(18px,  2);
+	font-size: golden-ratio(24px,  2);
 }
 h2{
-	font-size: golden-ratio(18px,  1);
+	font-size: golden-ratio(24px,  1);
 }
 p, li{
-	font-size: golden-ratio(18px,  0);
+	font-size: golden-ratio(24px,  0);
+	line-height: 1.5em;
+}
+input[type="submit"]{
+	display: block;
+	@include center-block;
+	min-width: 200px;
+}
+
+.media{
+	@include media-theme($teal);
 }
